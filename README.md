@@ -47,6 +47,14 @@ Go 言語を用いたバックエンド開発を得意としています。
     - Azure
   - テスト用のクラウドリソースセットアップ
   - 診断ポリシー内容見直し、修正案の提案
+- SBOM診断サービス開発
+  - AWS / GCP / Azure のクラウドリソースから SBOM を自動収集する機能の設計・開発
+  - 複数のSBOMスキャナー、脆弱性スキャナー（Trivy / Grype / AWS Inspector 等々）を組み合わせた脆弱性検出の仕組みの構築
+  - Go / Node.js / Rust / Java など複数言語の依存関係ファイルを解析し、脆弱性スキャン対象を拡充する機能の開発
+  - 診断結果の一覧・詳細画面の開発
+  - 前任者実装のコアライブラリをリファクタリング
+    - 単一クラスに混在していた SBOM 生成・ストレージ操作・DB 操作の責務を分離
+    - Result 型（neverthrow）を導入し、例外スローと混在していたエラーハンドリングを統一
 - プロダクトの品質向上
   - ログ及びトレース整備によるオブザーバビリティの向上
   - メッセージのパブリッシュ効率を7倍に改善
@@ -210,8 +218,8 @@ MVNO（格安 SIM）の業務システム開発・保守
 
 | 経験年数 | スキル                                                    |
 | -------- | --------------------------------------------------------- |
-| 0-1 年   | Python, Typescript, Javascript, R, GoogleCloud, Terraform |
-| 2-3 年   | PHP, Javascript, PostgreSQL, AWS                          |
+| 0-1 年   | Python, R, Azure, Terraform |
+| 2-3 年   | PHP, Typescript, Javascript, PostgreSQL, AWS, GoogleCloud                          |
 | 3- 年    | Go, MySQL                                                 |
 
 ## 性格
